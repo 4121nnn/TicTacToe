@@ -1,0 +1,26 @@
+/* styles.css */
+.root {
+    -fx-background-color: #264653; /* Set your desired background color */
+}
+/* Customize the default button style */
+.button {
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-background-color: #264653; /* Green background color */
+    -fx-text-fill: #E9C46A; /* White text color */
+    -fx-border-color: #2A9D8F; /* Border color */
+    -fx-border-width: 2px; /* Border width */
+    -fx-border-radius: 0px; /* Border radius */
+}
+#infoLabel{
+-fx-font-size: 16px;
+    -fx-padding: 10px;
+
+    -fx-text-fill: white; /* White text color */
+    -fx-border-width: 2px; /* Border width */
+    -fx-border-radius: 0px; /* Border radius */
+}
+/* Customize the hovered button style */
+.button:hover {
+    -fx-background-color: #2A9D8F; /* Darker green background color on hover */
+}
