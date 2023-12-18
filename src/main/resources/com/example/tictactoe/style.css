@@ -2,15 +2,24 @@
 .root {
     -fx-background-color: #264653; /* Set your desired background color */
 }
+
+Line {
+    /* Your styles for all Line elements go here */
+    -fx-stroke: white;
+    -fx-stroke-width: 5;
+}
 /* Customize the default button style */
 .button {
     -fx-font-size: 16px;
     -fx-padding: 10px;
     -fx-background-color: #264653; /* Green background color */
     -fx-text-fill: #E9C46A; /* White text color */
-    -fx-border-color: #2A9D8F; /* Border color */
+    /*-fx-border-color: white; */
     -fx-border-width: 2px; /* Border width */
     -fx-border-radius: 0px; /* Border radius */
+}
+.line{
+     -fx-background-color: red; /* Green background color */
 }
 #infoLabel{
 -fx-font-size: 16px;
