@@ -9,6 +9,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -16,8 +18,11 @@ import javafx.scene.shape.Arc;
 import javafx.scene.shape.ArcType;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import javax.print.attribute.standard.Media;
+import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,7 +31,7 @@ public class Controller {
     AnchorPane rootPane;
 
     @FXML
-    Pane gridPane,infoPane, X01, X02, X03, X04, X05, X06, X07, X08, X09;
+    Pane gridPane,infoPane,winDrawPane, X01, X02, X03, X04, X05, X06, X07, X08, X09;
     @FXML
     Label infoLabel;
 
@@ -39,6 +44,7 @@ public class Controller {
     boolean gameOver;
     String[] matrix = new String[LENGTH];
     String player ;
+    private static final String SOUND_FILE = "D:\\41n\\java\\TicTacToe\\src\\main\\resources\\com\\example\\tictactoe\\tap.mp3"; // Replace with the path to your sound file
 
     int[][] WIN_LINE = new int[8][4];
     int count = 0;
@@ -46,6 +52,21 @@ public class Controller {
     Line topHorLine, bottomHorLine, leftVerLine, rightVerLine;
 
     Set<Integer> isDraw ;
+
+    double xOffset, yOffset;
+
+    @FXML
+    private void handleMousePressed(MouseEvent event) {
+        xOffset = event.getSceneX();
+        yOffset = event.getSceneY();
+    }
+
+    @FXML
+    private void handleMouseDragged(MouseEvent event) {
+        Stage stage = (Stage) rootPane.getScene().getWindow();
+        stage.setX(event.getScreenX() - xOffset);
+        stage.setY(event.getScreenY() - yOffset);
+    }
     public void initialize() {
         buttons = new Button[]{btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9};
         X0panes = new Pane[]{X01, X02, X03, X04, X05, X06, X07, X08, X09};
@@ -67,9 +88,11 @@ public class Controller {
         }
 
         infoPane.getChildren().clear();
+        winDrawPane.getChildren().clear();
         infoLabel.setText(player + " turn");
         gridAnimation();
         isDraw = new HashSet<>();
+        winDrawPane.setVisible(false);
         infoPane.setVisible(false);
         newGame.setVisible(false);
 
@@ -156,7 +179,7 @@ public class Controller {
 
 
         // Add lines to the root pane
-        infoPane.getChildren().addAll(line1);
+        winDrawPane.getChildren().addAll(line1);
         Timeline timeline = new Timeline();
 
         // Add a keyframe to the timeline
@@ -176,12 +199,12 @@ public class Controller {
         timeline.play();
     }
     private void playSound() {
-        /*
+/*
         Media sound = new Media(new File(SOUND_FILE).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
-         */
-        java.awt.Toolkit.getDefaultToolkit().beep();
+
+ */
     }
     public void gridAnimation() {
         final int LINELENGTH = 150;
@@ -248,10 +271,11 @@ public class Controller {
 
         public void gameOver(String s){
             gameOver = true;
+            winDrawPane.setVisible(true);
             infoPane.setVisible(true);
             newGame.setVisible(true);
             Label gameResult = new Label();
-            gameResult.setPrefSize(300.0, 300.0);
+            gameResult.setPrefSize(360.0, 360.0);
             gameResult.setId("gameResult");
             gameResult.setText(s);
             infoPane.getChildren().add(gameResult);
@@ -316,6 +340,12 @@ public class Controller {
         public void btn9 () {
             onButtonPressed(8);
         }
+
+        public void exitGame(){
+            System.exit(0);
+        }
+
+
 
 
     }

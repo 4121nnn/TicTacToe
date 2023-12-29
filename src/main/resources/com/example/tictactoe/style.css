@@ -40,6 +40,29 @@ Line {
     -fx-border-width: 2px; /* Border width */
     -fx-border-radius: 0px; /* Border radius */
 }
+#topMenu{
+     -fx-background-color: #202124; /* Transparent background color */
+}
+#gameLabel{
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+
+    -fx-text-fill:  #F2EBD3; /* White text color */
+    -fx-border-width: 0px; /* Border width */
+    -fx-border-radius: 0px; /* Border radius */
+}
+#exit{
+     -fx-font-size: 16px;
+        -fx-padding: 0px;
+        -fx-background-color: #202124; /* Transparent background color */
+        -fx-text-fill: #E9C46A; /* White text color */
+        -fx-border-width: 0px; /* Border width */
+        -fx-border-radius: 10px; /* Border width */
+
+}
+#exit:hover{
+    -fx-text-fill: #F2EBD3; /* White text color */
+}
 #newGame:hover{
   -fx-background-color: rgba(17,157,143, 0.0); /* Transparent background color */
 }

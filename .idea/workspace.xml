@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d889484d-ae14-438a-b4de-ef8e552cbecc" name="Changes" comment="animate x and 0 on ech button pressed">
+    <list default="true" id="d889484d-ae14-438a-b4de-ef8e552cbecc" name="Changes" comment="added game result info at the end of game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/fxml.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/fxml.fxml" afterDir="false" />
@@ -163,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703864250693</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added game result info at the end of game">
+      <option name="closed" value="true" />
+      <created>1703874017644</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703874017644</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,6 +181,7 @@
     <MESSAGE value="added icon" />
     <MESSAGE value="animated grid and made simple animations for drawing X and 0. but not finish yet" />
     <MESSAGE value="animate x and 0 on ech button pressed" />
-    <option name="LAST_COMMIT_MESSAGE" value="animate x and 0 on ech button pressed" />
+    <MESSAGE value="added game result info at the end of game" />
+    <option name="LAST_COMMIT_MESSAGE" value="added game result info at the end of game" />
   </component>
 </project>
