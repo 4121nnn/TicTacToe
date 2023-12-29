@@ -4,9 +4,12 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.ArcType;
@@ -17,6 +20,9 @@ import javafx.util.Duration;
 public class Controller {
     @FXML
     AnchorPane rootPane;
+
+    @FXML
+    Pane gridPane, X01, X02, X03, X04, X05, X06, X07, X08, X09;
     @FXML
     Label infoLabel;
 
@@ -24,6 +30,7 @@ public class Controller {
     private Button  btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
     private final int LENGTH = 9;
     Button[] buttons = new Button[LENGTH];
+    Pane[] X0panes;
     boolean gameOver;
     String[] matrix = new String[LENGTH];
     String player ;
@@ -40,16 +47,19 @@ public class Controller {
         buttons[6] = btn7;
         buttons[7] = btn8;
         buttons[8] = btn9;
+        X0panes = new Pane[]{X01, X02, X03, X04, X05, X06, X07, X08, X09};
         gameOver = false;
         player = "X";
 
         for(int i = 0; i < matrix.length; i++){
-            matrix[i] = "" + i;
-            buttons[i].setText("");
+            matrix[i] = "z"+ i;
+
+        }
+        for(int i = 0; i < LENGTH; i++){
+            X0panes[i].getChildren().clear();
         }
         infoLabel.setText(player + " turn");
         gridAnimation();
-        draw0(1);
 
     }
 
@@ -57,31 +67,39 @@ public class Controller {
         initialize();
 
     }
-    public void drawX(int i){
-        Line line1 = new Line(50, 50, 50, 50);
-        line1.setStroke(Color.BLUE);
-        line1.setStrokeWidth(3);
+    public void drawX0(int i){
+        if(player.equals("X")){
+            drawX(i);
+        }else{
+            draw0(i);
+        }
+    }
 
-        // Create the second diagonal line (from top-right to bottom-left)
-        Line line2 = new Line(100, 50, 100, 50);
-        line2.setStroke(Color.BLUE);
+    public void drawX(int i){
+        final int START = 20;
+        final int END = 80;
+        Line line1 = new Line(START, START, START, START);
+        line1.setStrokeWidth(3);
+        line1.setId("XDraw1");        // Create the second diagonal line (from top-right to bottom-left)
+        Line line2 = new Line(END, START, END, START);
         line2.setStrokeWidth(3);
+        line2.setId("XDraw2");
 
         // Add lines to the root pane
-        rootPane.getChildren().addAll(line1, line2);
+        X0panes[i].getChildren().addAll(line1, line2);
         Timeline timeline = new Timeline();
 
         // Add a keyframe to the timeline
-        KeyFrame keyFrame = new KeyFrame(Duration.millis(600),
-                new KeyValue(line1.endYProperty(),  50) ,
-                new KeyValue(line1.startYProperty(),  100),
-                new KeyValue(line1.endXProperty(),  50) ,
-                new KeyValue(line1.startXProperty(),  100),
+        KeyFrame keyFrame = new KeyFrame(Duration.millis(400),
+                new KeyValue(line1.endYProperty(),  END) ,
+                new KeyValue(line1.startYProperty(),  START),
+                new KeyValue(line1.endXProperty(),  END) ,
+                new KeyValue(line1.startXProperty(),  START),
 
-                new KeyValue(line2.endYProperty(),  50) ,
-                new KeyValue(line2.startYProperty(),  100),
-                new KeyValue(line2.endXProperty(),  100) ,
-                new KeyValue(line2.startXProperty(),  50)
+                new KeyValue(line2.endYProperty(),  END) ,
+                new KeyValue(line2.startYProperty(),  START),
+                new KeyValue(line2.endXProperty(),  START) ,
+                new KeyValue(line2.startXProperty(),  END)
 
 
         );
@@ -97,14 +115,14 @@ public class Controller {
 
     public void draw0(int i){
         // Create an arc (round line)
-        Arc arc = new Arc(70, 70, 38, 38, 0, 0);
+        Arc arc = new Arc(50, 50, 38, 38, 0, 0);
         arc.setFill(Color.TRANSPARENT);
-        arc.setStroke(Color.BLUE);
-        arc.setStrokeWidth(3);
+        arc.setStroke(Color.web("#F2EBD3"));
+        arc.setStrokeWidth(5);
         arc.setType(ArcType.OPEN);
 
         // Add the arc to the root pane
-        rootPane.getChildren().add(arc);
+        X0panes[i].getChildren().add(arc);
 
         // Create a timeline for the animation
         Timeline timeline = new Timeline();
@@ -122,8 +140,8 @@ public class Controller {
     }
     public void gridAnimation(){
         final int LINELENGTH = 150;
-        final double startX = 30.0;
-        final double startY = 30.0;
+        final double startX = 0.0;
+        final double startY = 0.0;
         topHorLine.setStartX(startX);
         topHorLine.setEndX(startX);
         bottomHorLine.setStartX(startX);
@@ -174,9 +192,9 @@ public class Controller {
 
         if(matrix[i].equals("X") || matrix[i].equals("0") || gameOver) return;
 
-        //buttons[i].setText(player);
+        buttons[i].setText(player);
         matrix[i] = player;
-        drawX(i);
+        drawX0(i);
         if(isWin()){
             gameOver = true;
             infoLabel.setText(player + " win!!!!");

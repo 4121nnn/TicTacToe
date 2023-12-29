@@ -14,7 +14,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("TicTacToe");
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.getIcons().add(new Image("D:\\41n\\java\\TicTacToe\\src\\main\\resources\\com\\example\\tictactoe\\tictactoe.png"));
         stage.setScene(scene);
         stage.show();

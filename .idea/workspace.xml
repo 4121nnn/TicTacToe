@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d889484d-ae14-438a-b4de-ef8e552cbecc" name="Changes" comment="added icon">
+    <list default="true" id="d889484d-ae14-438a-b4de-ef8e552cbecc" name="Changes" comment="animated grid and made simple animations for drawing X and 0. but not finish yet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/fxml.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/fxml.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/style.css" afterDir="false" />
@@ -25,6 +26,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "4121nnn"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="5ffbc506-f29b-44bf-a416-ea2a65adf02d" />
+        <option name="url" value="https://github.com/4121nnn/TicTacToe.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -131,12 +146,21 @@
       <option name="project" value="LOCAL" />
       <updated>1702872402730</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="animated grid and made simple animations for drawing X and 0. but not finish yet">
+      <option name="closed" value="true" />
+      <created>1702928688864</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702928688865</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created simple version of tictactoe" />
     <MESSAGE value="added icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="added icon" />
+    <MESSAGE value="animated grid and made simple animations for drawing X and 0. but not finish yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="animated grid and made simple animations for drawing X and 0. but not finish yet" />
   </component>
 </project>
