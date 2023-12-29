@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Controller">
    <children>
-      <Pane fx:id="gridPane" layoutX="0.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0">
+      <Pane fx:id="gridPane" layoutX="0.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0">
          <Pane fx:id="X01" layoutX="0.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" />
          <Pane fx:id="X02" layoutX="100.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" />
          <Pane fx:id="X03" layoutX="200.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" />
@@ -45,8 +45,10 @@
 
       </Pane>
 
+      <Pane fx:id="infoPane" layoutX="0.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0">
 
-      <Button fx:id="newGame" layoutX="195.0" layoutY="18.0" mnemonicParsing="false" onAction="#startNewGame" prefHeight="50.0" prefWidth="118.0" text="New game" />
+      </Pane>
+      <Button fx:id="newGame" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" onAction="#startNewGame" prefHeight="300.0" prefWidth="300.0" text="" />
 
    </children>
 </AnchorPane>

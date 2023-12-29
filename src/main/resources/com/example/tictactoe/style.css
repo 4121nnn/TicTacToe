@@ -10,12 +10,25 @@ Line {
 
 
 }
+#gameResult{
+     -fx-background-color: rgba(38, 70, 83, 0.5); /* Transparent background color */
+     -fx-alignment: center;
+     -fx-font-size: 38px;
+      -fx-text-fill: rgba(242,235,211, 1); /* Fully transparent text color */
+     -fx-font-weight: bold;
+}
+
 #topHorLine, #bottomHorLine, #leftVerLine, #rightVerLine{
  -fx-stroke: #0DA495;
 }
 #XDraw1, #XDraw2{
     -fx-stroke: #545454;
+    -fx-stroke-width: 7;
 }
+#winLine{
+    -fx-stroke-width: 9;
+}
+
 
 /* Customize the default button style */
 .button {
@@ -27,6 +40,10 @@ Line {
     -fx-border-width: 2px; /* Border width */
     -fx-border-radius: 0px; /* Border radius */
 }
+#newGame:hover{
+  -fx-background-color: rgba(17,157,143, 0.0); /* Transparent background color */
+}
+
 .line{
      -fx-background-color: red; /* Green background color */
 }
